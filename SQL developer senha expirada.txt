@@ -1,0 +1,6 @@
+SQL developer senha expirada
+
+Iniciar > Todos os Programas > Oracle> Executar linha de comando SQL
+
+conn / as sysdba
+alter user system identified by fatec;

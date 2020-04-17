@@ -1,0 +1,4 @@
+13/02/2020
+
+Encontrar informações sobre tabelas:
+select * from dba_tables where table_name='NOME_DA_TABELA';
