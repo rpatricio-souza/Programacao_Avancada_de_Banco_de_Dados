@@ -1,0 +1,1 @@
+SET SERVEROUTPUT ON /* Permite que o comando dbms_output.put_line funcione */
