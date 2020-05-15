@@ -27,11 +27,12 @@ group by jas.job_id, jas.avg_salary;
 /*Listar os funcionarios de um departamento e indicar se o salario e menor, igual ou maior que a media do departamento*/
 SET SERVEROUTPUT ON /* Permite que o comando dbms_output.put_line funcione */
 
-declare
+create or replace procedure avg_job_dept(dept number) is
     cursor c_jas
     is
-    select first_name, salary, avg_salary
-    from employees join JAS_JOB_AVGSALARY using(job_id);
+    select first_name, e.department_id, salary, avg_salary
+    from employees e join JAS_JOB_AVGSALARY using(job_id)
+    where e.department_id=dept;
 begin
     for v_jas in c_jas
     loop
@@ -43,7 +44,9 @@ begin
             dbms_output.put_line(v_jas.first_name || ' has a salary of $' || v_jas.salary || ' which is higher than the avg of his/her department $' || v_jas.avg_salary);
         end if;
     end loop;
-end;
+end avg_job_dept;
+
+exec avg_job_dept(30);
 
 
 /*Para todos os funcionarios, aplicar um reajuste de salario que e de 10% sobre a diferença entre o salario e a media salarial
