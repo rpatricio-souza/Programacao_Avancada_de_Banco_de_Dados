@@ -1,0 +1,33 @@
+Laboratório 04 - Programação Avançada PL/SQL
+
+
+01) Elaborar um código PL/SQL para varrer os números de 0 a 100.
+
+A cada iteração gerar um log no disco com o total atual de números pares.
+Exemplo:
+Quando for 0  Gravar no arquivo: Total de pares: 1
+Quando for 1  Não gravar no arquivo
+Quando for 2  Gravar no arquivo: Total de pares: 2
+Quando for 3  Não gravar no arquivo
+Quando for 4  Gravar no arquivo: Total de pares: 3
+
+Teste para saber se é par: mod(numero/2) = 0
+
+02) Elaborar um código PL/SQL capaz de ler o arquivo com o conteúdo a seguir e inserir numa tabela que você criará.
+
+Conteúdo do arquivo:
+JOSE FILHO;32;21/04/1984;
+ABREU SODRE;43;14/06/1970;
+RICARDO SIQUEIRA;21;30/10/1945;
+
+Tabela deve conter as colunas nome, idade e data de nascimento
+
+Função para separar o texto
+substr()
+
+Função para encontrar o caractere ";"
+instr()
+
+
+
+
