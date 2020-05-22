@@ -1,3 +1,6 @@
+--usar o sql developer
+--connectar como hr;
+
 set serveroutput on;
 declare
   v_line           varchar2(32767);
@@ -55,3 +58,4 @@ exception
     Utl_File.Fclose_All;
     Raise_Application_Error ( -20000, 'Invalid_Filehandle trapped' );
 end;
+/
