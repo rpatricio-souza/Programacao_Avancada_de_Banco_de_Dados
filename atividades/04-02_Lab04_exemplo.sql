@@ -32,6 +32,7 @@ begin
     filename    => c_filename,
     open_mode   => 'w' /* write over any existing file with this name */,
     max_linesize => 32767 );
+    --max_linesize => 32768 );
 
   Show_Is_Open;
   Put_Line;
