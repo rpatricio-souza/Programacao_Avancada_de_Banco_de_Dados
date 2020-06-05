@@ -6,16 +6,35 @@ select * from employees;
 desc copy_employees;
 
 declare
-    type rt_employees is ref cursor;
+    registro_cursor copy_employees%rowtype;
+    type rt_employees is ref cursor/* return registro_cursor*/;
     ct_employees rt_employees;
-
+    --emp_cur rt_employees;
+    /*
+    cursor emp_cur is
+    select salary from copy_employees
+    for update of salary;
+    */
     empregados copy_employees%rowtype;
+    empsal copy_employees.salary%type;
     
     nome varchar(45);
     sal copy_employees.salary%type;
     dept departments.department_name%type;
     
 begin
+    /*
+    --Usando um cursor comum para atualizar o salario
+    open emp_cur;
+    loop
+        fetch emp_cur into empsal;
+        exit when emp_cur%NOTFOUND;
+        update copy_employees set salary=empsal*1.1
+            where current of emp_cur;
+        --dbms_output.put_line(empsal*1.1);
+    end loop;
+    close emp_cur;
+    */
     
     --Seleciona todo o conteudo da tabela e joga no cursor
 	open ct_employees for
