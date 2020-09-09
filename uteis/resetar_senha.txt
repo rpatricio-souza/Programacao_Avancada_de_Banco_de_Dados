@@ -1,0 +1,16 @@
+Resetar senha de usuários no Oracle (incluindo sys e system)
+
+Entrar no prompt de comando e digitar:
+
+sqlplus / as sysdba
+
+Alterar o usuário deseja e cadastrar a nova senha:
+alter user <nome_do_usuario> identified by <nova_senha>
+
+Ex.:
+alter user system identified by fatec;
+
+
+
+*Mostrar os nomes dos usuários cadastrados:
+select username from dba_sys;
